@@ -59,6 +59,7 @@ def main(args):
 
     # defining instance number for given batch
     indices = np.array_split(np.arange(n_samples), args.n_batches)[args.batch_index]
+    print(indices)
     print(f"Rendering samples in range: {min(indices)} - {max(indices)}")
 
     # defining image folder
