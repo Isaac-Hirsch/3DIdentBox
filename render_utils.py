@@ -25,16 +25,14 @@ def extract_args(input_argv=None):
     """
     if input_argv is None:
         input_argv = sys.argv
-        print('input argv',input_argv)
     output_argv = []
-    # if "--" in input_argv:
-    #     idx = input_argv.index("--")
-    #     output_argv = input_argv[(idx + 1) :]
-
-    for i, value in enumerate(input_argv):
-        if i in [0,1,2,3,4]: pass
-        else: output_argv.append(value)
-    print('output argv',output_argv)
+    if "--" in input_argv:
+         idx = input_argv.index("--")
+         output_argv = input_argv[(idx + 1) :]
+    else:
+        for i, value in enumerate(input_argv):
+            if i in [0,1,2,3,4]: pass
+            else: output_argv.append(value)
     return output_argv
 
 
